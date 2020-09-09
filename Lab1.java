@@ -2,6 +2,13 @@ public class Clss {
 
     public static void main(String[] args) {
 
+        System.out.print(
+                "Здравствуйте ! Вас приветствует разработчик  данной програаммы,Хусаенов А.И.,  \n" +
+                "которая выводит к какому из окон по введенным по координатам(Х;Y) заданным  команд- \n" +
+                "ной строки в IntelegIdea:Run → Edit Configuration → Program arguments . \n" +
+                "Внимание! Значение должны быть введение в ввиде чисел ! Удачной эксплуатации программы.");
+
+        System.out.println("\n");
         System.out.print("координаты курсора -> [");
         for (int i = 0; i < args.length; i++) {
             System.out.print(args[i]);
@@ -13,6 +20,7 @@ public class Clss {
         System.out.println("]");
 
         int i = 0;
+
         double x = Double. parseDouble(args[i]);
         double y = Double. parseDouble(args[i+1]);
 
@@ -27,45 +35,45 @@ public class Clss {
 
         }
 
-            Rectangle rect5 = new Rectangle();
-            rect5.rectNum = 5;
-            rect5.leftX  = 16.2;
-            rect5.leftY  = 53.3;
-            rect5.rightX = 81.1;
-            rect5.rightY = 73.0;
+        Rectangle rect5 = new Rectangle();
+        rect5.rectNum = 5;
+        rect5.leftX  = 16.2;
+        rect5.leftY  = 53.3;
+        rect5.rightX = 81.1;
+        rect5.rightY = 73.0;
 
 
-            Rectangle rect4 = new Rectangle();
-            rect4.rectNum = 4;
-            rect4.leftX = 21.62;
-            rect4.leftY = 12.21;
-            rect4.rightX = 70.06;
-            rect4.rightY = 33.04;
+        Rectangle rect4 = new Rectangle();
+        rect4.rectNum = 4;
+        rect4.leftX = 21.62;
+        rect4.leftY = 12.21;
+        rect4.rightX = 70.06;
+        rect4.rightY = 33.04;
 
 
-            Rectangle rect3 = new Rectangle();
-            rect3.rectNum = 3;
-            rect3.leftX = 85.5;
-            rect3.leftY = 23.2;
-            rect3.rightX = 99.3;
-            rect3.rightY = 154.0;
+        Rectangle rect3 = new Rectangle();
+        rect3.rectNum = 3;
+        rect3.leftX = 85.5;
+        rect3.leftY = 23.2;
+        rect3.rightX = 99.3;
+        rect3.rightY = 154.0;
 
 
 
-            Rectangle rect2 = new Rectangle();
-            rect2.rectNum = 2;
-            rect2.leftX = 46.8;
-            rect2.leftY = 82.4;
-            rect2.rightX = 95.0;
-            rect2.rightY = 86.0;
+        Rectangle rect2 = new Rectangle();
+        rect2.rectNum = 2;
+        rect2.leftX = 46.8;
+        rect2.leftY = 82.4;
+        rect2.rightX = 95.0;
+        rect2.rightY = 86.0;
 
 
-            Rectangle rect1 = new Rectangle();
-            rect1.rectNum = 1;
-            rect1.leftX = 10.5;
-            rect1.leftY = 10.2;
-            rect1.rightX = 67.99;
-            rect1.rightY = 100.0;
+        Rectangle rect1 = new Rectangle();
+        rect1.rectNum = 1;
+        rect1.leftX = 10.5;
+        rect1.leftY = 10.2;
+        rect1.rightX = 67.99;
+        rect1.rightY = 100.0;
 
         if  ((x > rect5.leftX)&(x < rect5.rightX)&(y > rect5.leftY)&(y < rect5.rightY))
         {
@@ -101,13 +109,13 @@ public class Clss {
         }
         else
 
-            System.out.println("Курсор не принадлежит ни одному из окон");
+            System.out.println("Курсор не принадлежит ни одному из представлленых окон");
 
 
 
     }
 
-    }
+}
 
 
 
