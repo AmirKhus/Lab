@@ -1,29 +1,39 @@
 public class Clss {
 
     public static void main(String[] args) {
+        double x = 0;
+        double y = 0;
+        boolean help = true;
 
-        System.out.print(
-                "Здравствуйте ! Вас приветствует разработчик  данной програаммы,Хусаенов А.И.,  \n" +
-                "которая выводит к какому из окон по введенным по координатам(Х;Y) заданным  команд- \n" +
-                "ной строки в IntelegIdea:Run → Edit Configuration → Program arguments . \n" +
-                "Внимание! Значение должны быть введение в ввиде чисел ! Удачной эксплуатации программы.");
+        if ((args.length < 4) || (args.length > 4)) {
+            System.out.println("Пожалуйста, введите координаты курсора согласно примеру \n" +
+                    "-x 23.4 -y 32.4" +
+                    "Внимание!!! Буквы должны быть ПРОПИСНЫМИ и на английском языке.\n" +
+                    "Удачной эксплуатации программы.");
+            help = false;
+        } else {
+            for (int i = 0; i < args.length; i++) {
+                if ((args[i].equals("-h")) ||
+                        (args[i].equals("-help")) ||
+                        (args[i].equals("-?"))) {
 
-        System.out.println("\n");
-        System.out.print("координаты курсора -> [");
-        for (int i = 0; i < args.length; i++) {
-            System.out.print(args[i]);
-            if (i == 0) {
-                System.out.print("; ");
+                    System.out.println("Программа называется 'Определятор окна 3000'" +
+                            "Разработал программу - Хусаенов А.И.");
+
+                    help = false;
+
+                } else if (args[i].equals("-x")) {
+                    x = Double.parseDouble(args[i + 1]);
+                } else if (args[i].equals("-y")) {
+                    y = Double.parseDouble(args[i + 1]);
+
+                }
+
             }
         }
 
-        System.out.println("]");
-
-        int i = 0;
-
-        double x = Double. parseDouble(args[i]);
-        double y = Double. parseDouble(args[i+1]);
-
+        if (help)
+            System.out.println("Координаты курсора -> [" + args[1] + ";" + args[3] + "]");
 
 
         class Rectangle {
@@ -37,8 +47,8 @@ public class Clss {
 
         Rectangle rect5 = new Rectangle();
         rect5.rectNum = 5;
-        rect5.leftX  = 16.2;
-        rect5.leftY  = 53.3;
+        rect5.leftX = 16.2;
+        rect5.leftY = 53.3;
         rect5.rightX = 81.1;
         rect5.rightY = 73.0;
 
@@ -59,7 +69,6 @@ public class Clss {
         rect3.rightY = 154.0;
 
 
-
         Rectangle rect2 = new Rectangle();
         rect2.rectNum = 2;
         rect2.leftX = 46.8;
@@ -75,50 +84,32 @@ public class Clss {
         rect1.rightX = 67.99;
         rect1.rightY = 100.0;
 
-        if  ((x > rect5.leftX)&(x < rect5.rightX)&(y > rect5.leftY)&(y < rect5.rightY))
-        {
+        if (help) {
 
-            System.out.println("курсор расположен в "+ rect5.rectNum + " окне");
+            if ((x > rect5.leftX) && (x < rect5.rightX) && (y > rect5.leftY) && (y < rect5.rightY)) {
+
+                System.out.println("курсор расположен в " + rect5.rectNum + " окне");
+
+            } else if ((x <= rect4.leftX) && (x >= rect4.leftX) && (y <= rect4.leftY) && (y >= rect4.leftY)) {
+
+                System.out.println("курсор расположен в " + rect4.rectNum + " окне");
+
+            } else if ((x <= rect3.leftX) && (x >= rect3.leftX) && ((y <= rect3.leftY) && (y >= rect3.leftY))) {
+
+                System.out.println("курсор расположен в " + rect3.rectNum + " окне");
+
+            } else if ((x <= rect2.leftX) && (x >= rect2.leftX) && ((y <= rect2.leftY) && (y >= rect2.leftY))) {
+                System.out.println("курсор расположен в " + rect2.rectNum + " окне");
+
+            } else if ((x <= rect1.leftX) && (x >= rect1.leftX) && ((y <= rect1.leftY) && (y >= rect1.leftY))) {
+                System.out.println("курсор расположен в " + rect1.rectNum + " окне");
+
+            } else
+
+                System.out.println("Курсор не принадлежит ни одному из окон");
+
 
         }
-
-        else if ((x <= rect4.leftX) & (x >= rect4.leftX) & (y <= rect4.leftY) & (y >= rect4.leftY))
-        {
-
-            System.out.println("курсор расположен в " + rect4.rectNum + " окне");
-
-        }
-
-        else if ((x <= rect3.leftX)&(x >= rect3.leftX)&((y <= rect3.leftY)&(y >= rect3.leftY)))
-        {
-
-            System.out.println("курсор расположен в "+ rect3.rectNum +" окне");
-
-        }
-
-        else if ((x <= rect2.leftX) & (x >= rect2.leftX) & ((y <= rect2.leftY) & (y >= rect2.leftY)))
-        {
-            System.out.println("курсор расположен в " + rect2.rectNum + " окне");
-
-        }
-
-        else if ((x <= rect1.leftX) & (x >= rect1.leftX) & ((y <= rect1.leftY) & (y >= rect1.leftY)))
-        {
-            System.out.println("курсор расположен в " + rect1.rectNum + " окне");
-
-        }
-        else
-
-            System.out.println("Курсор не принадлежит ни одному из представлленых окон");
-
-
-
     }
 
 }
-
-
-
-
-
-
