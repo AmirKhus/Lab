@@ -167,3 +167,15 @@ public class Cat {
 
     }
 }
+FIO.json
+{
+
+  "lname":"Пушкин",
+
+  "fname":"Александр",
+
+  "mname":"Сергеевич",
+
+  "bdate":"06.06.1799"
+
+}
