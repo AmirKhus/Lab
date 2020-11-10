@@ -1,0 +1,77 @@
+                            File file = new File("DataBase_login.txt");
+
+                            if (!file.exists()) {//ПРОВЕРКА НА СУЩЕСТВОВАНИЕ ФАЙЛА
+                                file.createNewFile();
+                            }
+                            FileWriter writer = new FileWriter(file);
+
+                            registerButton.setOnAction(event -> {
+                System.out.println(loginLabel.getText());
+                System.out.println(passwordLabel.getText());
+
+
+                // Создание объекта FileWriter
+                BufferedReader br = null;
+                    try (Scanner scan = new Scanner(file)) {
+                        br = new BufferedReader(new FileReader(file));
+
+                        String[] logon = scan.nextLine().split(",");
+                        while ((logon[0] = br.readLine()) != null) {
+                            if (loginLabel.getText() == logon[0]) {
+                                System.out.println("Логин занят");
+                            } else {
+                                System.out.println("Аккаунт зарегестрирован");
+                                    writer.write(loginLabel.getText()+" "+ passwordLabel.getText()+" , ");
+
+                            }
+                        }} catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                try {
+                        writer.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    //                    br = new BufferedReader(new FileReader("test.txt"));
+                    //                    String line;
+                    //                    while ((line = br.readLine()) != null && line == loginLabel.getText() && line == passwordLabel.getText()) {
+                    //                        System.out.print("Вход в систему");
+                    //                    }
+
+
+                    --------------------------------------------------------------
+
+                                    try (Scanner scan = new Scanner(new File("C:\\Users\\KP\\IdeaProjects\\Excel\\src\\input.txt"))) {
+                                        while(scan.hasNextLine()){
+                                            String[] logon = scan.nextLine().split(",");
+                                            if (logon[0].equals(loginLabel.getText())){
+                    //                            System.out.println("Логин занят");
+                                                zanyat = false;
+                                            }
+                                        }
+
+                                    } catch (IOException ex) {
+                                        ex.printStackTrace();
+                                    }
+                                    if (zanyat) {
+                                                System.out.println("Логин занят");
+                                    }else {
+                                        String data = loginLabel.getText()+","+ passwordLabel.getText()+"\n";
+                                        OutputStream os = null;
+                                        try {
+                                            //в конструкторе FileOutputStream используем флаг true, который обозначает обновление содержимого файла
+                                            os = new FileOutputStream(new File("C:\\Users\\KP\\IdeaProjects\\Excel\\src\\input.txt"), true);
+                                            os.write(data.getBytes(), 0, data.length());
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }finally{
+                                            try {
+                                                os.close();
+                                            } catch (IOException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                        zanyat = false;
+                                    }
